@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+
+    <div>
+        <h3>Leads</h3>
+        <p class="text-muted mb-0">
+            Gerencie as empresas identificadas para prospecção.
+        </p>
+    </div>
+
+    <button class="btn btn-primary" disabled>
+        <i class="bi bi-plus-lg"></i>
+        Novo lead
+    </button>
+
+</div>
+
+<div class="card content-card">
+
+    <div class="card-body">
+
+        <div class="row g-3 mb-4">
+
+            <div class="col-md-8">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Pesquisar empresa, segmento ou e-mail..."
+                    disabled
+                >
+            </div>
+
+            <div class="col-md-4">
+                <select class="form-select" disabled>
+                    <option>Todos os status</option>
+                    <option>Novo</option>
+                    <option>Qualificado</option>
+                    <option>Contatado</option>
+                    <option>Interessado</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table align-middle">
+
+                <thead>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Segmento</th>
+                        <th>E-mail</th>
+                        <th>Status</th>
+                        <th>Origem</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="6" class="text-center py-5 text-muted">
+                            Nenhum lead cadastrado até o momento.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

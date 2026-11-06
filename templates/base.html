@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ titulo }} | Agente Comercial IA</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <i class="bi bi-robot"></i>
+                <span>Agente Comercial</span>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="/" class="nav-link {% if pagina == 'dashboard' %}active{% endif %}">
+                    <i class="bi bi-grid-1x2"></i>
+                    Dashboard
+                </a>
+
+                <a href="/leads" class="nav-link {% if pagina == 'leads' %}active{% endif %}">
+                    <i class="bi bi-people"></i>
+                    Leads
+                </a>
+
+                <a href="#" class="nav-link disabled">
+                    <i class="bi bi-search"></i>
+                    Prospecção
+                </a>
+
+                <a href="#" class="nav-link disabled">
+                    <i class="bi bi-file-earmark-arrow-up"></i>
+                    Importação
+                </a>
+
+                <a href="#" class="nav-link disabled">
+                    <i class="bi bi-envelope"></i>
+                    Abordagens
+                </a>
+
+                <a href="#" class="nav-link disabled">
+                    <i class="bi bi-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <div class="main-wrapper">
+
+            <header class="topbar">
+
+                <button
+                    class="btn btn-outline-secondary d-lg-none"
+                    id="btnMenu"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="sidebar"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <h5 class="mb-0">{{ titulo }}</h5>
+
+                <span class="badge text-bg-primary">
+                    ExtraiDoc
+                </span>
+
+            </header>
+
+            <main class="main-content">
+                {% block content %}{% endblock %}
+            </main>
+
+        </div>
+
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{{ url_for('static', path='/js/app.js') }}"></script>
+
+</body>
+</html>

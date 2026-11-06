@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-heading mb-4">
+    <h3>Visão geral</h3>
+    <p class="text-muted">
+        Acompanhe seus leads e oportunidades comerciais.
+    </p>
+</div>
+
+<div class="row g-3 mb-4">
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="metric-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-people"></i>
+                </div>
+                <p>Total de leads</p>
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="metric-icon bg-info-subtle text-info">
+                    <i class="bi bi-patch-check"></i>
+                </div>
+                <p>Qualificados</p>
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="metric-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-envelope"></i>
+                </div>
+                <p>Contatados</p>
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="metric-icon bg-success-subtle text-success">
+                    <i class="bi bi-hand-thumbs-up"></i>
+                </div>
+                <p>Interessados</p>
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card content-card">
+
+    <div class="card-header bg-white">
+        <h5 class="mb-0">Últimos leads</h5>
+    </div>
+
+    <div class="card-body text-center py-5">
+
+        <i class="bi bi-inbox fs-1 text-muted"></i>
+
+        <h5 class="mt-3">Nenhum lead cadastrado</h5>
+
+        <p class="text-muted">
+            Comece importando uma lista ou pesquisando empresas.
+        </p>
+
+        <a href="/leads" class="btn btn-primary">
+            Visualizar leads
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

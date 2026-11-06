@@ -1,15 +1,13 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
+from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-app = FastAPI(title="Agente Comercial IA")
+from app.routers import pages
+
+app = FastAPI(
+    title="Agente Comercial IA",
+    description="Sistema de prospecção e qualificação de leads",
+)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-templates = Jinja2Templates(directory="templates")
-
-
-@app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
-    return templates.TemplateResponse(request=request, name="index.html")
+app.include_router(pages.router)
